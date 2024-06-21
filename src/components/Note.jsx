@@ -17,8 +17,8 @@ const Note = forwardRef(({ note, onMouseDown, onRemove }, ref) => {
                     e.stopPropagation(); // Prevent triggering onMouseDown
                     onRemove(note.id);
                 }}
-                className='ml-4 bg-red-500 rounded-full aspect-square text-white px-2 py-1'
-            >
+                className='ml-4 bg-red-500  rounded-full aspect-square text-white px-1'
+            > 
                 <IoMdClose />
             </button>
         </div>
