@@ -29,9 +29,12 @@ const Notes = ({ notes, setNotes }) => {
     }, [notes, setNotes]);
 
     const determineNewPosition = () => {
-        const maxX = window.innerWidth - 250;
-        const maxY = window.innerHeight - 250;
-
+        const noteWidth = 350; // Assuming each note has a width of 250px
+        const noteHeight = 250; // Assuming each note has a height of 250px
+    
+        const maxX = window.innerWidth - noteWidth;
+        const maxY = window.innerHeight - noteHeight;
+    
         return {
             x: Math.floor(Math.random() * maxX),
             y: Math.floor(Math.random() * maxY),
@@ -54,6 +57,7 @@ const Notes = ({ notes, setNotes }) => {
             const finalRect = noteRef.getBoundingClientRect();
             const newPosition = { x: finalRect.left, y: finalRect.top };
 
+            // Check if the note overlaps with any other note
             if (checkForOverlap(noteId)) {
                 noteRef.style.left = `${startPos.x}px`;
                 noteRef.style.top = `${startPos.y}px`;
@@ -63,8 +67,15 @@ const Notes = ({ notes, setNotes }) => {
         };
 
         const handleMouseMove = (e) => {
-            const newX = e.clientX - offsetX;
-            const newY = e.clientY - offsetY;
+            // Calculate new position within boundaries
+            let newX = e.clientX - offsetX;
+            let newY = e.clientY - offsetY;
+
+            // Restrict within window boundaries
+            const maxX = window.innerWidth - rect.width;
+            const maxY = window.innerHeight - rect.height;
+            newX = Math.max(0, Math.min(newX, maxX));
+            newY = Math.max(0, Math.min(newY, maxY));
 
             noteRef.style.left = `${newX}px`;
             noteRef.style.top = `${newY}px`;

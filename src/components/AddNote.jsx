@@ -21,20 +21,20 @@ const AddNote = ({ notes, setNotes }) => {
 
     return (
         <form className='fixed flex justify-center w-full bottom-0' onSubmit={handleSubmit}>
-            <div className='  mx-auto flex justify-center w-full bg-white'>
+            <div className='  mx-auto flex justify-center w-full bg-[#f5ffbe45]'>
                 <div className='relative mx-auto w-10/12 flex items-center text-xl'>
 
-                    <p className='absolute top-[-50%] right-0 mx-5 text-white'>Created by- Abhishek Navgan</p>
+                    <p className='absolute top-[-60%] right-0 mx-5 text-gray-500'>Created by- Abhishek Navgan</p>
 
                     <input
                         type="text"
                         placeholder='Add a note'
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
-                        className='bg-white py-5 outline-none h-full w-full text-3xl px-5'
+                        className='bg-[#00000000] placeholder:text-gray-100 text-white py-3 outline-none h-full w-full text-3xl px-5'
                     />
 
-                    <button type='submit' className='bg-white px-3 py-2 h-full text-3xl'><IoIosAdd /></button>
+                    <button type='submit' className=' text-white px-3 py-2 h-full text-3xl'><IoIosAdd /></button>
 
                 </div>
             </div>

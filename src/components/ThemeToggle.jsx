@@ -6,8 +6,8 @@ const ThemeToggle = ({ darkActive, setDarkActive }) => {
     return (
         <button
             onClick={() => { setDarkActive(!darkActive); localStorage.setItem("theme", !darkActive) }}
-            className='text-yellow-200 px-2 text-xl aspect-square 
-            flex items-center justify-center border-2 border-yellow-200 rounded-full bg-black'
+            className='text-gray-300 px-2 text-xl aspect-square 
+            flex items-center justify-center border border-gray-300 rounded-full bg-black'
         >
             {
                 !darkActive

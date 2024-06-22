@@ -11,7 +11,7 @@ function App() {
 
 
   return (
-    <div className={`w-full scroll-y-none min-h-screen ${darkActive ? "bg-emerald-950" : "bg-emerald-400"}`}>
+    <div className={`w-full scroll-y-none min-h-screen select-none ${darkActive ? "bg-gradient-to-br from-sky-950 via-emerald-950 to-blue-950" : "bg-gradient-to-br from-sky-700 via-emerald-600 to-sky-500"}`}>
       <span className="py-5 max-w-[1280px] mx-auto flex justify-between">
         <img src={logo} alt="" className="h-10" />
         <ThemeToggle darkActive={darkActive} setDarkActive={setDarkActive} />
